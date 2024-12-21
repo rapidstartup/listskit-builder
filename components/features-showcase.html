@@ -1,0 +1,52 @@
+<div class="image-text">
+  <div class="divider"></div>
+  <h2>Why List Your Restaurant?</h2>
+  <div class="row">
+    <div class="column image-text-left-column">
+      <img id="visibility-icon" alt="visibility icon" width="224" height="208" border="0" loading="lazy" />
+    </div>
+    <div class="column image-text-right-column">
+      <h2 id="visibility-title"></h2>
+      <p id="visibility-description"></p>
+    </div>
+  </div>
+</div>
+
+<div class="text-image">
+  <div class="row">
+    <div class="column text-image-left-column">
+      <h2 id="management-title"></h2>
+      <p id="management-description"></p>
+    </div>
+    <div class="column text-image-right-column">
+      <img id="management-icon" alt="management icon" width="224" height="208" border="0" loading="lazy" />
+    </div>
+  </div>
+</div>
+
+<div class="image-text">
+  <div class="row">
+    <div class="column image-text-left-column">
+      <img id="analytics-icon" alt="analytics icon" width="224" height="208" border="0" loading="lazy" />
+    </div>
+    <div class="column image-text-right-column">
+      <h2 id="analytics-title"></h2>
+      <p id="analytics-description"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Update business features content after the component is loaded
+  document.getElementById('visibility-icon').src = siteData.businessFeatures.visibility.icon;
+  document.getElementById('visibility-title').textContent = siteData.businessFeatures.visibility.title;
+  document.getElementById('visibility-description').textContent = siteData.businessFeatures.visibility.description;
+
+  document.getElementById('management-icon').src = siteData.businessFeatures.management.icon;
+  document.getElementById('management-title').textContent = siteData.businessFeatures.management.title;
+  document.getElementById('management-description').textContent = siteData.businessFeatures.management.description;
+
+  document.getElementById('analytics-icon').src = siteData.businessFeatures.analytics.icon;
+  document.getElementById('analytics-title').textContent = siteData.businessFeatures.analytics.title;
+  document.getElementById('analytics-description').textContent = siteData.businessFeatures.analytics.description;
+</script> 

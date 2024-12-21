@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>List Your Restaurant - MexicanFood.mx</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="List Your Restaurant - MexicanFood.mx" />
+  <meta name="description" content="Join the largest directory of Mexican restaurants and reach thousands of potential customers." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="https://ik.imagekit.io/listskit/Lists%20Kit%20home/listskit-icon-32px.png" />
+
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="restaurant-owner.css" />
+</head>
+<body style="background-color: #1e1e1e;">
+  <div id="app">
+    <!-- Navigation -->
+    <div id="navigation-container">
+      <div class="navbar" id="navMenu">
+        <a href="/" class="logo">
+          <img src="https://ik.imagekit.io/listskit/Lists%20Kit%20demo/listskit-logo-transparent-whiteicon.png" 
+              width="80" height="80" alt="Mexican Restaurants Directory" loading="lazy" />
+          <span>MexicanFood.mx</span>
+        </a>
+        <a href="/">Back to Directory</a>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="owner-hero">
+      <h1>Grow Your Restaurant Business</h1>
+      <h2>Join the largest directory of Mexican restaurants and reach thousands of potential customers</h2>
+    </div>
+
+    <!-- Features Showcase -->
+    <div id="features-showcase-container">
+      <div class="image-text">
+        <div class="divider"></div>
+        <h2>Why List Your Restaurant?</h2>
+        <div class="row">
+          <div class="column image-text-left-column">
+            <img src="https://ik.imagekit.io/listskit/Lists%20Kit%20demo/passport-svgrepo-com.png" width="224"
+              height="208" alt="increased visibility icon" border="0" loading="lazy" />
+          </div>
+          <div class="column image-text-right-column">
+            <h2>Increased Visibility</h2>
+            <p>
+              Get discovered by thousands of hungry diners looking for authentic Mexican cuisine. 
+              Our platform helps you reach both locals and tourists searching for the best restaurants.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-image">
+        <div class="row">
+          <div class="column text-image-left-column">
+            <h2>Easy Management</h2>
+            <p>
+              Update your menu, hours, and special offers in real-time. Respond to customer reviews 
+              and showcase your restaurant's unique atmosphere with high-quality photos.
+            </p>
+          </div>
+          <div class="column text-image-right-column">
+            <img src="https://ik.imagekit.io/listskit/Lists%20Kit%20demo/high-speed-rail-svgrepo-com.png" width="224"
+              height="208" alt="restaurant management icon" border="0" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <div class="image-text">
+        <div class="row">
+          <div class="column image-text-left-column">
+            <img src="https://ik.imagekit.io/listskit/Lists%20Kit%20demo/bank-card-svgrepo-com.png" width="224"
+              height="208" alt="analytics icon" border="0" loading="lazy" />
+          </div>
+          <div class="column image-text-right-column">
+            <h2>Insights & Analytics</h2>
+            <p>
+              Track your listing's performance with detailed analytics. See how many people view your 
+              restaurant, click through to your website, or save your location for later.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing -->
+    <div id="pricing" class="pricing-container">
+      <h2>Choose Your Plan</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Basic Listing</h3>
+          <div class="price">$29<span>/month</span></div>
+          <div class="trial-text">7-day free trial, no credit card required</div>
+          <ul>
+            <li><i class="fa fa-check"></i> Basic Restaurant Profile</li>
+            <li><i class="fa fa-check"></i> Photo Gallery (up to 5 photos)</li>
+            <li><i class="fa fa-check"></i> Contact Information</li>
+            <li><i class="fa fa-check"></i> Basic Analytics</li>
+            <li><i class="fa fa-check"></i> Customer Reviews</li>
+          </ul>
+          <button class="pricing-btn" onclick="openModal('basic')">Start Free Trial</button>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="featured-label">Most Popular</div>
+          <h3>Premium Listing</h3>
+          <div class="price">$49<span>/month</span></div>
+          <div class="trial-text">7-day free trial, no credit card required</div>
+          <ul>
+            <li><i class="fa fa-check"></i> Enhanced Restaurant Profile</li>
+            <li><i class="fa fa-check"></i> Unlimited Photo Gallery</li>
+            <li><i class="fa fa-check"></i> Menu Display</li>
+            <li><i class="fa fa-check"></i> Featured in Search Results</li>
+            <li><i class="fa fa-check"></i> Advanced Analytics</li>
+            <li><i class="fa fa-check"></i> Priority Support</li>
+          </ul>
+          <button class="pricing-btn" onclick="openModal('premium')">Start Free Trial</button>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Enterprise</h3>
+          <div class="price">$99<span>/month</span></div>
+          <div class="trial-text">7-day free trial, no credit card required</div>
+          <ul>
+            <li><i class="fa fa-check"></i> Everything in Premium</li>
+            <li><i class="fa fa-check"></i> Multiple Location Management</li>
+            <li><i class="fa fa-check"></i> Social Media Integration</li>
+            <li><i class="fa fa-check"></i> Promotional Tools</li>
+            <li><i class="fa fa-check"></i> API Access</li>
+            <li><i class="fa fa-check"></i> Dedicated Account Manager</li>
+          </ul>
+          <button class="pricing-btn" onclick="openModal('enterprise')">Start Free Trial</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Form -->
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <button class="close-modal" onclick="closeModal()">&times;</button>
+        <div class="submit-listing-container">
+          <h2>Start Your Free Trial</h2>
+          <form id="listing-form" class="listing-form">
+            <div class="form-group">
+              <label for="restaurant-name">Restaurant Name *</label>
+              <input type="text" id="restaurant-name" required>
+            </div>
+            <div class="form-group">
+              <label for="restaurant-address">Address *</label>
+              <input type="text" id="restaurant-address" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="restaurant-phone">Phone Number *</label>
+                <input type="tel" id="restaurant-phone" required>
+              </div>
+              <div class="form-group">
+                <label for="restaurant-email">Email *</label>
+                <input type="email" id="restaurant-email" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="restaurant-website">Website</label>
+              <input type="url" id="restaurant-website">
+            </div>
+            <div class="form-group">
+              <label for="restaurant-description">Description *</label>
+              <textarea id="restaurant-description" rows="4" required></textarea>
+            </div>
+            <input type="hidden" id="selected-plan" name="selected-plan">
+            <button type="submit" class="submit-btn">Start Free Trial</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQs Section -->
+    <div id="faqs" class="faqs-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            How do I list my restaurant?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Listing your restaurant is easy! Simply click on the "List Your Restaurant" button, choose a plan that suits your needs, and follow our simple registration process. We'll guide you through adding your restaurant's details, photos, and menu.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            What are the benefits of listing my restaurant?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>By listing your restaurant, you'll gain increased visibility to thousands of potential customers, access to powerful analytics tools, easy menu management features, and the ability to respond to customer reviews. Our platform helps you reach both locals and tourists searching for authentic Mexican dining experiences.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            How much does it cost to list my restaurant?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We offer flexible pricing plans starting from $29/month for basic listings. All plans come with a 7-day free trial, so you can experience the benefits before committing. Check our pricing page for detailed information about features and costs.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            Can I update my restaurant's information after listing?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! You can update your restaurant's information at any time through your dashboard. This includes menu items, photos, opening hours, special offers, and contact details. Changes are reflected immediately on your listing.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            How do I respond to customer reviews?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>As a registered restaurant owner, you can respond to customer reviews directly through your dashboard. We encourage engaging with your customers to build trust and show your commitment to customer service.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="sitedata.js"></script>
+  <script src="restaurant-owner.js"></script>
+  <script>
+    // ... existing script code ...
+
+    // FAQ Toggle Function
+    function toggleFAQ(button) {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('.faq-icon');
+      
+      // Close all other FAQs
+      const allAnswers = document.querySelectorAll('.faq-answer');
+      const allIcons = document.querySelectorAll('.faq-icon');
+      
+      allAnswers.forEach(item => {
+        if (item !== answer && item.style.maxHeight) {
+          item.style.maxHeight = null;
+          item.previousElementSibling.querySelector('.faq-icon').textContent = '+';
+        }
+      });
+
+      // Toggle current FAQ
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+        icon.textContent = '+';
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        icon.textContent = '−';
+      }
+    }
+  </script>
+</body>
+</html> 

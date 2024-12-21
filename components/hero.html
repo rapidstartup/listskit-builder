@@ -1,0 +1,12 @@
+<div class="hero-image">
+  <h1 id="hero-title"></h1>
+  <h2 id="hero-subtitle"></h2>
+  <a class="hero-btn" href="#list" aria-label="explore" id="hero-cta"></a>
+</div>
+
+<script>
+  // Update hero content after the component is loaded
+  document.getElementById('hero-title').textContent = siteData.hero.title;
+  document.getElementById('hero-subtitle').textContent = siteData.hero.subtitle;
+  document.getElementById('hero-cta').textContent = siteData.hero.cta;
+</script> 

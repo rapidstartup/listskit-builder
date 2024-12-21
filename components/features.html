@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="column">
+      <div class="feature-icon">
+        <img id="discovery-icon" alt="discovery icon" width="512" height="512" loading="lazy" />
+      </div>
+      <h2 id="discovery-title"></h2>
+      <p id="discovery-description"></p>
+    </div>
+    <div class="column">
+      <div class="feature-icon">
+        <img id="reviews-icon" alt="reviews icon" width="512" height="512" loading="lazy" />
+      </div>
+      <h2 id="reviews-title"></h2>
+      <p id="reviews-description"></p>
+    </div>
+    <div class="column">
+      <div class="feature-icon">
+        <img id="details-icon" alt="details icon" width="512" height="512" loading="lazy" />
+      </div>
+      <h2 id="details-title"></h2>
+      <p id="details-description"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Update features content after the component is loaded
+  document.getElementById('discovery-icon').src = siteData.features.discovery.icon;
+  document.getElementById('discovery-title').textContent = siteData.features.discovery.title;
+  document.getElementById('discovery-description').textContent = siteData.features.discovery.description;
+
+  document.getElementById('reviews-icon').src = siteData.features.reviews.icon;
+  document.getElementById('reviews-title').textContent = siteData.features.reviews.title;
+  document.getElementById('reviews-description').textContent = siteData.features.reviews.description;
+
+  document.getElementById('details-icon').src = siteData.features.details.icon;
+  document.getElementById('details-title').textContent = siteData.features.details.title;
+  document.getElementById('details-description').textContent = siteData.features.details.description;
+</script> 

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - MexicanFood.mx</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Contact Us - MexicanFood.mx" />
+  <meta name="description" content="Get in touch with us for any questions about listing your restaurant or using our platform." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" id="favicon" href="" />
+
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Navigation -->
+    <div class="navbar" id="navMenu">
+      <a href="/" class="logo" onclick="respNavMenu()">
+        <img id="nav-logo" width="80" height="80" alt="logo" loading="lazy" />
+        <span id="site-name"></span>
+      </a>
+      <a href="list-your-restaurant.html#pricing" aria-label="pricing" onclick="respNavMenu()">Pricing</a>
+      <a href="list-your-restaurant.html#faqs" aria-label="faqs" onclick="respNavMenu()">FAQs</a>
+      <a href="#" aria-label="sign up" class="navbar-btn" onclick="respNavMenu()">Sign up</a>
+      <a href="#" onclick="respNavMenu()" class="icon"><i class="fa fa-bars"></i></a>
+    </div>
+
+    <!-- Contact Form Section -->
+    <div class="contact-section">
+      <h1>Contact Us</h1>
+      <p class="contact-description">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+      
+      <div class="contact-form-container">
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/your_formspree_id" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject" required>
+              <option value="">Select a subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="support">Technical Support</option>
+              <option value="billing">Billing Question</option>
+              <option value="partnership">Partnership Opportunity</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Your message"></textarea>
+          </div>
+          
+          <button type="submit" class="contact-submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="sitedata.js"></script>
+  <script>
+    window.onload = function() {
+      // Initialize site content
+      document.getElementById('nav-logo').src = siteData.site.logo;
+      document.getElementById('site-name').textContent = siteData.site.name;
+      document.getElementById('favicon').href = siteData.site.favicon;
+    };
+
+    function respNavMenu() {
+      var x = document.getElementById("navMenu");
+      if (x.className === "navbar") {
+        x.className += " responsive";
+      } else {
+        x.className = "navbar";
+      }
+    }
+  </script>
+</body>
+</html> 

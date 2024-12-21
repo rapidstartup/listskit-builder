@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title"></title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" id="meta-title" content="" />
+  <meta name="description" id="meta-description" content="" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" id="favicon" href="" />
+
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Navigation -->
+    <div class="navbar" id="navMenu">
+      <a href="/" class="logo" onclick="respNavMenu()">
+        <img id="nav-logo" width="80" height="80" alt="logo" loading="lazy" />
+        <span id="site-name"></span>
+      </a>
+      <a href="#why-list-your-restaurant" aria-label="about" onclick="respNavMenu()">About</a>
+      <a href="list-your-restaurant.html#pricing" aria-label="pricing" onclick="respNavMenu()">Pricing</a>
+      <a href="contact.html" aria-label="contact" onclick="respNavMenu()">Contact</a>
+      <a href="#" aria-label="sign up" class="navbar-btn" onclick="respNavMenu()">Sign up</a>
+      <a href="#" onclick="respNavMenu()" class="icon"><i class="fa fa-bars"></i></a>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero-image">
+      <h1 id="hero-title"></h1>
+      <h2 id="hero-subtitle"></h2>
+      <a class="hero-btn" href="#list" aria-label="explore" id="hero-cta"></a>
+    </div>
+
+    <!-- Features -->
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <div class="feature-icon">
+            <img id="discovery-icon" alt="discovery icon" width="512" height="512" loading="lazy" />
+          </div>
+          <h2 id="discovery-title"></h2>
+          <p id="discovery-description"></p>
+        </div>
+        <div class="column">
+          <div class="feature-icon">
+            <img id="reviews-icon" alt="reviews icon" width="512" height="512" loading="lazy" />
+          </div>
+          <h2 id="reviews-title"></h2>
+          <p id="reviews-description"></p>
+        </div>
+        <div class="column">
+          <div class="feature-icon">
+            <img id="details-icon" alt="details icon" width="512" height="512" loading="lazy" />
+          </div>
+          <h2 id="details-title"></h2>
+          <p id="details-description"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div id="filters-modal" class="modal-container">
+      <div onclick="triggerFiltersModal()" class="overlay"></div>
+      <div id="filters-modal-content" class="modal">
+        <div class="modal-text">
+          <h2>ALL CATEGORIES</h2>
+          <button class="filter-tag-btn active-btn" onclick="showAllCards()">
+            <span id="all-filter-text"></span>
+          </button>
+          <div id="filter-categories"></div>
+        </div>
+        <button onclick="triggerFiltersModal()" class="close">&times;</button>
+      </div>
+    </div>
+
+    <div id="filterTags" class="filter-tags">
+      <div id="leftBlurEl" class="filter-tags-left-blur"></div>
+      <div id="leftBlurEl-arrow" class="filter-tags-left-arrow">&#8249;</div>
+      <div id="rightBlurEl" class="filter-tags-right-blur"></div>
+      <div id="rightBlurEl-arrow" class="filter-tags-right-arrow">&#8250;</div>
+      <button class="all-filters-tag-btn" onclick="triggerFiltersModal()">
+        <i class="fa fa-sliders" aria-hidden="true"></i> Filters
+      </button>
+      <button class="filter-tag-btn active-btn" onclick="showAllCards()">
+        <span id="all-filter-text-inline"></span>
+      </button>
+      <div id="filter-tags-inline"></div>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" class="search-input" oninput="searchCards()" placeholder="&#xf002;  Search..." />
+    </div>
+
+    <!-- Card Container -->
+    <div id="cardContainer">
+      <div id="cardWrapper">
+        <!-- Cards will be dynamically inserted here by JavaScript -->
+      </div>
+    </div>
+    
+    <!-- Load More Section -->
+    <div class="load-more-container">
+      <button id="load-more-btn" class="outline-btn" onclick="loadMore()">
+        <i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;Load more
+      </button>
+      <div id="end-of-list">You've reached the end of the list.</div>
+    </div>
+
+    <!-- Features Showcase -->
+    <div id="why-list-your-restaurant" class="image-text">
+      <div class="divider"></div>
+      <h2>Why List Your Restaurant?</h2>
+      <div class="row">
+        <div class="column image-text-left-column">
+          <img id="visibility-icon" alt="visibility icon" width="224" height="208" border="0" loading="lazy" />
+        </div>
+        <div class="column image-text-right-column">
+          <h2 id="visibility-title"></h2>
+          <p id="visibility-description"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-image">
+      <div class="row">
+        <div class="column text-image-left-column">
+          <h2 id="management-title"></h2>
+          <p id="management-description"></p>
+        </div>
+        <div class="column text-image-right-column">
+          <img id="management-icon" alt="management icon" width="224" height="208" border="0" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <div class="image-text">
+      <div class="row">
+        <div class="column image-text-left-column">
+          <img id="analytics-icon" alt="analytics icon" width="224" height="208" border="0" loading="lazy" />
+        </div>
+        <div class="column image-text-right-column">
+          <h2 id="analytics-title"></h2>
+          <p id="analytics-description"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="centered-cta">
+      <h2 id="cta-title"></h2>
+      <p id="cta-description"></p>
+      <div class="centered-cta-btn">
+        <a href="list-your-restaurant.html" id="cta-button"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="sitedata.js"></script>
+  <script src="directorydata.js"></script>
+  <script src="script.js"></script>
+  <script>
+    window.onload = function() {
+      // Initialize site content
+      // Set metadata
+      document.getElementById('page-title').textContent = siteData.site.title;
+      document.getElementById('meta-title').content = siteData.site.title;
+      document.getElementById('meta-description').content = siteData.site.description;
+      document.getElementById('favicon').href = siteData.site.favicon;
+
+      // Update navigation
+      document.getElementById('nav-logo').src = siteData.site.logo;
+      document.getElementById('site-name').textContent = siteData.site.name;
+
+      // Update hero
+      document.getElementById('hero-title').textContent = siteData.hero.title;
+      document.getElementById('hero-subtitle').textContent = siteData.hero.subtitle;
+      document.getElementById('hero-cta').textContent = siteData.hero.cta;
+
+      // Update features
+      document.getElementById('discovery-icon').src = siteData.features.discovery.icon;
+      document.getElementById('discovery-title').textContent = siteData.features.discovery.title;
+      document.getElementById('discovery-description').textContent = siteData.features.discovery.description;
+
+      document.getElementById('reviews-icon').src = siteData.features.reviews.icon;
+      document.getElementById('reviews-title').textContent = siteData.features.reviews.title;
+      document.getElementById('reviews-description').textContent = siteData.features.reviews.description;
+
+      document.getElementById('details-icon').src = siteData.features.details.icon;
+      document.getElementById('details-title').textContent = siteData.features.details.title;
+      document.getElementById('details-description').textContent = siteData.features.details.description;
+
+      // Update filters
+      document.getElementById('all-filter-text').textContent = siteData.filters.all;
+      document.getElementById('all-filter-text-inline').textContent = siteData.filters.all;
+
+      // Generate filter categories
+      const categoriesContainer = document.getElementById('filter-categories');
+      const tagsContainer = document.getElementById('filter-tags-inline');
+      
+      siteData.filters.categories.forEach((category, index) => {
+        // Add to modal
+        if (index % 3 === 0) {
+          const heading = document.createElement('h3');
+          heading.textContent = `Category ${Math.floor(index / 3) + 1}`;
+          categoriesContainer.appendChild(heading);
+        }
+        
+        const button = document.createElement('button');
+        button.className = 'filter-tag-btn';
+        button.onclick = () => { filterCards(category.toLowerCase()); triggerFiltersModal(); };
+        button.textContent = category;
+        categoriesContainer.appendChild(button);
+
+        // Add to inline filters
+        const inlineButton = document.createElement('button');
+        inlineButton.className = 'filter-tag-btn';
+        inlineButton.onclick = () => filterCards(category.toLowerCase());
+        inlineButton.textContent = category;
+        tagsContainer.appendChild(inlineButton);
+      });
+
+      // Update business features
+      document.getElementById('visibility-icon').src = siteData.businessFeatures.visibility.icon;
+      document.getElementById('visibility-title').textContent = siteData.businessFeatures.visibility.title;
+      document.getElementById('visibility-description').textContent = siteData.businessFeatures.visibility.description;
+
+      document.getElementById('management-icon').src = siteData.businessFeatures.management.icon;
+      document.getElementById('management-title').textContent = siteData.businessFeatures.management.title;
+      document.getElementById('management-description').textContent = siteData.businessFeatures.management.description;
+
+      document.getElementById('analytics-icon').src = siteData.businessFeatures.analytics.icon;
+      document.getElementById('analytics-title').textContent = siteData.businessFeatures.analytics.title;
+      document.getElementById('analytics-description').textContent = siteData.businessFeatures.analytics.description;
+
+      // Update CTA
+      document.getElementById('cta-title').textContent = siteData.cta.main.title;
+      document.getElementById('cta-description').textContent = siteData.cta.main.description;
+      document.getElementById('cta-button').textContent = siteData.cta.main.buttonText;
+
+      // Initialize cards
+      if (directoryData && directoryData.length > 0) {
+        renderCards(directoryData.slice(0, cardsToLoad));
+      }
+    };
+
+    // Make functions globally available
+    window.loadMore = loadMore;
+    window.renderCards = renderCards;
+    window.filterCards = filterCards;
+    window.showAllCards = showAllCards;
+    window.searchCards = searchCards;
+    window.triggerModal = triggerModal;
+    window.respNavMenu = respNavMenu;
+
+    // FAQ Toggle Function
+    function toggleFAQ(button) {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('.faq-icon');
+      
+      // Close all other FAQs
+      const allAnswers = document.querySelectorAll('.faq-answer');
+      const allIcons = document.querySelectorAll('.faq-icon');
+      
+      allAnswers.forEach(item => {
+        if (item !== answer && item.style.maxHeight) {
+          item.style.maxHeight = null;
+          item.previousElementSibling.querySelector('.faq-icon').textContent = '+';
+        }
+      });
+
+      // Toggle current FAQ
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+        icon.textContent = '+';
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        icon.textContent = '−';
+      }
+    }
+  </script>
+</body>
+</html>

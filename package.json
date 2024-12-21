@@ -1,0 +1,19 @@
+{
+  "name": "lists-cancun",
+  "version": "1.0.0",
+  "description": "Mexican Restaurant Directory for Cancun",
+  "scripts": {
+    "wrangler:dev": "wrangler pages dev .",
+    "wrangler:deploy": "wrangler pages deploy .",
+    "wrangler:configure": "node scripts/configure-wrangler.js",
+    "wrangler:dev-auto": "node scripts/configure-wrangler.js && wrangler pages dev .",
+    "wrangler:deploy-auto": "node scripts/configure-wrangler.js && wrangler pages deploy .",
+    "next:dev": "cd app && npm run dev",
+    "next:build": "cd app && npm run build",
+    "next:start": "cd app && npm run start"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "wrangler": "^3.22.3"
+  }
+}

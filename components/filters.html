@@ -1,0 +1,69 @@
+<!-- Modal for all filters -->
+<div id="filters-modal" class="modal-container">
+  <div onclick="triggerFiltersModal()" class="overlay"></div>
+  <div id="filters-modal-content" class="modal" style="overflow-y: auto; padding: 0 2rem 2rem 2.5rem">
+    <div class="modal-text">
+      <h2>ALL CATEGORIES</h2>
+      <button class="filter-tag-btn active-btn" onclick="showAllCards(), triggerFiltersModal()">
+        <span id="all-filter-text"></span>
+      </button>
+      <div id="filter-categories"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Filter Tags -->
+<div id="filterTags" class="filter-tags">
+  <div id="leftBlurEl" class="filter-tags-left-blur"></div>
+  <div id="leftBlurEl-arrow" class="filter-tags-left-arrow">
+    &#8249;
+  </div>
+  <div id="rightBlurEl" class="filter-tags-right-blur"></div>
+  <div id="rightBlurEl-arrow" class="filter-tags-right-arrow">
+    &#8250;
+  </div>
+  <button class="all-filters-tag-btn" onclick="triggerFiltersModal()">
+    <i class="fa fa-sliders" aria-hidden="true"></i> Filters
+  </button>
+  <button class="filter-tag-btn active-btn" onclick="showAllCards()">
+    <span id="all-filter-text-inline"></span>
+  </button>
+  <div id="filter-tags-inline"></div>
+</div>
+
+<!-- Search Bar -->
+<div class="search-bar">
+  <input type="text" id="searchInput" class="search-input" oninput="searchCards()" placeholder="&#xf002;  Search..." />
+</div>
+
+<script>
+  // Update filters content after the component is loaded
+  document.getElementById('all-filter-text').textContent = siteData.filters.all;
+  document.getElementById('all-filter-text-inline').textContent = siteData.filters.all;
+
+  // Generate filter categories
+  const categoriesContainer = document.getElementById('filter-categories');
+  const tagsContainer = document.getElementById('filter-tags-inline');
+  
+  siteData.filters.categories.forEach((category, index) => {
+    // Add to modal
+    if (index % 3 === 0) {
+      const heading = document.createElement('h3');
+      heading.textContent = `Category ${Math.floor(index / 3) + 1}`;
+      categoriesContainer.appendChild(heading);
+    }
+    
+    const button = document.createElement('button');
+    button.className = 'filter-tag-btn';
+    button.onclick = () => { filterCards(category.toLowerCase()); triggerFiltersModal(); };
+    button.textContent = category;
+    categoriesContainer.appendChild(button);
+
+    // Add to inline filters
+    const inlineButton = document.createElement('button');
+    inlineButton.className = 'filter-tag-btn';
+    inlineButton.onclick = () => filterCards(category.toLowerCase());
+    inlineButton.textContent = category;
+    tagsContainer.appendChild(inlineButton);
+  });
+</script> 

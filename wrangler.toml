@@ -1,0 +1,28 @@
+# The name of your project on Cloudflare Pages
+name = "lists-cancun"
+
+# Compatibility date for Workers runtime
+compatibility_date = "2024-12-21"
+
+# The build configuration
+[build]
+command = "" # No build command needed for static site
+publish = "." # The directory containing your static assets
+
+# Exclude Next.js app and configuration
+[site]
+exclude = [
+  "app/**/*",
+  "next.config.js",
+  ".next/**/*"
+]
+
+# Environment variables for different deployment environments
+[env.production]
+name = "production"
+vars = { ENVIRONMENT = "production" }
+
+[env.preview]
+name = "preview"
+vars = { ENVIRONMENT = "preview" }
+  

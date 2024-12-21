@@ -1,0 +1,14 @@
+<div class="centered-cta">
+  <h2 id="cta-title"></h2>
+  <p id="cta-description"></p>
+  <div class="centered-cta-btn">
+    <a href="list-your-restaurant.html" id="cta-button"></a>
+  </div>
+</div>
+
+<script>
+  // Update CTA content after the component is loaded
+  document.getElementById('cta-title').textContent = siteData.cta.main.title;
+  document.getElementById('cta-description').textContent = siteData.cta.main.description;
+  document.getElementById('cta-button').textContent = siteData.cta.main.buttonText;
+</script> 

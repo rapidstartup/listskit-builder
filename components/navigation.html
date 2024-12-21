@@ -1,0 +1,18 @@
+<div class="navbar" id="navMenu">
+  <a href="/" class="logo" onclick="respNavMenu()">
+    <img id="nav-logo" width="80" height="80" alt="logo" loading="lazy" />
+    <span id="site-name"></span>
+  </a>
+  <a href="#about" aria-label="about" onclick="respNavMenu()">About</a>
+  <a href="#pricing" aria-label="pricing" onclick="respNavMenu()">Pricing</a>
+  <a href="#faqs" aria-label="faqs" onclick="respNavMenu()">FAQs</a>
+  <a href="#contact" aria-label="contact" onclick="respNavMenu()">Contact</a>
+  <a href="#" aria-label="sign up" class="navbar-btn" onclick="respNavMenu()">Sign up</a>
+  <a href="#" onclick="respNavMenu()" class="icon"><i class="fa fa-bars"></i></a>
+</div>
+
+<script>
+  // Update navigation content after the component is loaded
+  document.getElementById('nav-logo').src = siteData.site.logo;
+  document.getElementById('site-name').textContent = siteData.site.name;
+</script> 
